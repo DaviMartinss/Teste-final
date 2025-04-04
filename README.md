@@ -1,4 +1,4 @@
-✅ Desafio
+# ✅ Desafio
 1º - Abra o arquivo docker-compose.yml e execute todos os serviços.
 
 2º - Verifique os containers criados no Docker Desktop. Certifique-se de que ambos estejam em execução.
