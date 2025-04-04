@@ -1,0 +1,22 @@
+services:
+  backend:
+    container_name: wallet-management-django
+    build: .
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    volumes:
+      - ./backend:/usr/src/backend
+  database:
+    container_name: wallet-management-database
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWD}
